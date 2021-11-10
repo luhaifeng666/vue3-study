@@ -30,7 +30,7 @@ jobs:
       - name: Compiling start
         run: echo Compiling start!
       - run: git config --global user.email "youzui@hotmail.com"
-      - run: git config --global user.name "luhaifeng"
+      - run: git config --global user.name "luhaifeng666"
       - run: npm install
       - run: npm run deploy
       - name: Run a multi-line script
