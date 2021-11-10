@@ -58,7 +58,7 @@ pageConfig.forEach(item => {
 
 let config = {
 	title: 'vue3-study',
-	description: 'Vue3 study notes.',
+	description: ' ',
 	base: '/vue3-study/',
 	markdown: {
 		lineNumbers: true

@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: '14'
       - name: Compiling start
-        run: Compiling start!
+        run: echo Compiling start!
       - run: npm deploy
       - name: Run a multi-line script
         run: echo Compiling completed
