@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: VUE3-STUDY DOCS CI
 
 # Controls when the workflow will run
 on:
@@ -24,16 +24,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
       - name: Compiling start
         run: echo Compiling start!
       - run: git config --global user.email "youzui@hotmail.com"
-      - run: git config --global user.name "luhaifeng666"
-      - run: npm install
-      - run: npm run deploy
+      - run: git config --global user.name "luhaifeng"
+      - run: npm install && npm run deploy
       - name: Run a multi-line script
         run: echo Compiling completed
