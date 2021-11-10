@@ -35,7 +35,7 @@ jobs:
       - name: deploy #部署
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.vue3_study }} # key
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} # key
           external_repository: luhaifeng666/luhaifeng666.github.io #推送到该仓库中，地址格式为github名称/仓库名
           publish_branch: main #分支名
           publish_dir: docs/.vuepress/dist #要推送的内容（打包后的博客文件夹）
