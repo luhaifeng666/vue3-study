@@ -32,10 +32,12 @@ jobs:
       - run: git config --global user.email "youzui@hotmail.com"
       - run: git config --global user.name "luhaifeng"
       - run: npm install && npm run docs:build
-      - name: deploy #部署
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} # key
-          external_repository: luhaifeng666/luhaifeng666.github.io #推送到该仓库中，地址格式为github名称/仓库名
-          publish_branch: main #分支名
-          publish_dir: docs/.vuepress/dist #要推送的内容（打包后的博客文件夹）
+      - name: Deploy luhaifeng666.github.io/main
+          uses: peaceiris/actions-gh-pages@v2
+          env:
+            ACTIONS_DEPLOY_KEY: ${{ secrets.vue3_study }}
+            EXTERNAL_REPOSITORY: luhaifeng666/luhaifeng666.github.io
+            PUBLISH_BRANCH: gh-pages
+            PUBLISH_DIR: docs/.vuepress/dist
+          with:
+            emptyCommits: false
