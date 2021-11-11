@@ -36,6 +36,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.VUE3STUDY }}
-          external_repository: luhaifeng666/luhaifeng666.github.io #推送到该仓库中，地址格式为github名称/仓库名
-          publish_branch: main #分支名
-          publish_dir: docs/.vuepress/dist
+          external_repository: luhaifeng666/vue3-study #推送到该仓库中，地址格式为github名称/仓库名
+          publish_branch: gh-pages #分支名
