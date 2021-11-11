@@ -32,12 +32,8 @@ jobs:
       - run: git config --global user.email "youzui@hotmail.com"
       - run: git config --global user.name "luhaifeng"
       - run: npm install && npm run docs:build
-      - name: Deploy luhaifeng666.github.io/main
-        uses: peaceiris/actions-gh-pages@v2
-        env:
-          ACTIONS_DEPLOY_KEY: ${{ secrets.vue3_study }}
-          EXTERNAL_REPOSITORY: luhaifeng666/luhaifeng666.github.io/vue3-study/
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: docs/.vuepress/dist
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          emptyCommits: false
+          github_token: ${{ secrets.actionsToken }}
+          publish_dir: ./public
