@@ -68,12 +68,8 @@ let config = {
 		sidebarDepth: 2,
 		sidebar: 'auto',
 		nav: [
-			// { text: 'Home', link: '/' },
-			// { text: 'CSS3Note', link: '/views/CSS3Note/' },
-			// { text: 'JSNote', link: '/views/JSNote/' },
-			// // { text: 'OtherNote', link: '/views/OtherNote/' },
-			// { text: 'GitHub', link: 'https://github.com/luhaifeng666/Notes' },
-			// { text: 'LBUI', link: 'https://github.com/luhaifeng666/LBUI' }
+			{ text: 'Home', link: '/' },
+			{ text: 'GitHub', link: 'https://github.com/luhaifeng666/vue3-study' },
 		],
 		sidebar
 	}

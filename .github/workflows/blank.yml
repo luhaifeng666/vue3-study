@@ -38,4 +38,4 @@ jobs:
           deploy_key: ${{ secrets.VUE3STUDY }}
           external_repository: luhaifeng666/vue3-study #推送到该仓库中，地址格式为github名称/仓库名
           publish_branch: gh-pages #分支名
-          publish_dir: docs/.vuepress/dist
+          publish_dir: docs/.vuepress/dist # 这里设置的是要推送到external_repository的产物路径

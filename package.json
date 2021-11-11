@@ -9,7 +9,8 @@
     "docs:build": "vuepress build docs",
     "deploy": "bash deploy.sh",
     "ca": "git add -A && git-cz -av",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "test": "jest"
   },
   "license": "MIT",
   "devDependencies": {
@@ -17,6 +18,13 @@
     "husky": "^5.0.9",
     "commitizen": "^4.2.3",
     "cz-conventional-changelog": "^3.3.0",
-    "lint-staged": "^10.5.4"
+    "lint-staged": "^10.5.4",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.4",
+    "@babel/preset-typescript": "^7.15.0",
+    "@types/jest": "^27.0.1",
+    "babel-jest": "^27.1.0",
+    "jest": "^27.1.0",
+    "typescript": "^4.4.2"
   }
 }
