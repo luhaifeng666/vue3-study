@@ -58,8 +58,21 @@ let config = {
 			{ text: 'Notes', link: '/miniVue/notes/'},
 			{ text: 'GitHub', link: 'https://github.com/luhaifeng666/vue3-study' },
 		],
-		// sidebar
-	}
+	},
+	plugins: [
+		[
+			'vuepress-plugin-comment',
+			{
+				choosen: 'valine',
+				// options选项中的所有参数，会传给Valine的配置
+				options: {
+					el: '#valine-vuepress-comment',
+					appId: 'aVNQnd9rUIO93XrdeMQLBnMo-9Nh9j0Va',
+					appKey: 'BIlRvPsMx9Y6dXvfJCxNJvWf'
+				}
+			}
+		]
+	]
 }
 
 module.exports = config
