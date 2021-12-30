@@ -1,5 +1,3 @@
-import { createDep } from './dep'
-
 let activeEffect = void 0
 const targetMap = new WeakMap()
 
@@ -34,7 +32,7 @@ export function track(target, type, key) {
 
   let dep = depsMap.get(key)
   if (!dep) {
-    dep = createDep()
+    dep = new Set()
     depsMap.set(key, dep)
   }
 
