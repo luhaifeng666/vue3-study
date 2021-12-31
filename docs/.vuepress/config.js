@@ -27,7 +27,6 @@ pageConfig.forEach(item => {
 			let children = getFiles(`${item.baseUrl}${path.url}`)
 			let conf = {
 				title: path.name,
-				// collapsable: false,
 				children
 			}
 			sidebar[item.name].push(conf)
@@ -56,6 +55,7 @@ let config = {
 		nav: [
 			{ text: 'Home', link: '/' },
 			{ text: 'Notes', link: '/miniVue/notes/'},
+			{ text: '酱豆腐精的小站', link: 'https://luhaifeng666.github.io' },
 			{ text: 'GitHub', link: 'https://github.com/luhaifeng666/vue3-study' },
 		],
 	},
