@@ -9,6 +9,6 @@ comment: false
 
 笔记已同步至 [酱豆腐精的小站](https://luhaifeng666.github.io/)， 欢迎各位大佬指正~。
 
-结合课程一起食用，风味更佳哦~快加入我们，一起 ~~卷~~ 学习起来吧~
+结合课程一起食用，风味更佳哦~ 快加入我们，一起 ~~卷~~ 学习起来吧~
 
 ![recommend](../../.vuepress/public/images/recommend.png)
