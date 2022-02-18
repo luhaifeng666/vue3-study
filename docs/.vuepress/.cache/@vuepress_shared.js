@@ -3,7 +3,7 @@ import {
   isFunction,
   isPromise,
   isString
-} from "./chunk-ZHUCBTLW.js";
+} from "./chunk-Y2ZPJJGE.js";
 import {
   init_define_COMMENT_OPTIONS,
   init_define_EXTERNAL_LINK_ICON_LOCALES,
@@ -15,52 +15,52 @@ init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 
-// node_modules/@vuepress/shared/lib/esm/index.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/index.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 
-// node_modules/@vuepress/shared/lib/esm/types/index.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/types/index.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 
-// node_modules/@vuepress/shared/lib/esm/types/head.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/types/head.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 
-// node_modules/@vuepress/shared/lib/esm/types/locale.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/types/locale.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 
-// node_modules/@vuepress/shared/lib/esm/types/page.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/types/page.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 
-// node_modules/@vuepress/shared/lib/esm/types/site.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/types/site.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 
-// node_modules/@vuepress/shared/lib/esm/types/ssr.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/types/ssr.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 
-// node_modules/@vuepress/shared/lib/esm/utils/index.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/index.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 
-// node_modules/@vuepress/shared/lib/esm/utils/dedupeHead.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/dedupeHead.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 
-// node_modules/@vuepress/shared/lib/esm/utils/resolveHeadIdentifier.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/resolveHeadIdentifier.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
@@ -77,7 +77,7 @@ var resolveHeadIdentifier = ([tag, attrs, content]) => {
   return JSON.stringify([tag, attrs, content]);
 };
 
-// node_modules/@vuepress/shared/lib/esm/utils/dedupeHead.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/dedupeHead.js
 var dedupeHead = (head) => {
   const identifierSet = /* @__PURE__ */ new Set();
   const result = [];
@@ -91,19 +91,19 @@ var dedupeHead = (head) => {
   return result;
 };
 
-// node_modules/@vuepress/shared/lib/esm/utils/ensureLeadingSlash.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/ensureLeadingSlash.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 var ensureLeadingSlash = (str) => str.replace(/^\/?/, "/");
 
-// node_modules/@vuepress/shared/lib/esm/utils/ensureEndingSlash.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/ensureEndingSlash.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 var ensureEndingSlash = (str) => /(\.html|\/)$/.test(str) ? str : str + "/";
 
-// node_modules/@vuepress/shared/lib/esm/utils/formatDateString.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/formatDateString.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
@@ -116,7 +116,7 @@ var formatDateString = (str, defaultDateString = "") => {
   return [yearStr, monthStr.padStart(2, "0"), dayStr.padStart(2, "0")].join("-");
 };
 
-// node_modules/@vuepress/shared/lib/esm/utils/htmlEscape.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/htmlEscape.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
@@ -130,7 +130,7 @@ var htmlEscapeMap = {
 var htmlEscapeRegexp = /[&<>'"]/g;
 var htmlEscape = (str) => str.replace(htmlEscapeRegexp, (char) => htmlEscapeMap[char]);
 
-// node_modules/@vuepress/shared/lib/esm/utils/htmlUnescape.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/htmlUnescape.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
@@ -149,24 +149,24 @@ var htmlUnescapeMap = {
 var htmlUnescapeRegexp = /&(amp|#38|lt|#60|gt|#62|apos|#39|quot|#34);/g;
 var htmlUnescape = (str) => str.replace(htmlUnescapeRegexp, (char) => htmlUnescapeMap[char]);
 
-// node_modules/@vuepress/shared/lib/esm/utils/isLinkExternal.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/isLinkExternal.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 
-// node_modules/@vuepress/shared/lib/esm/utils/isLinkFtp.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/isLinkFtp.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 var isLinkFtp = (link) => link.startsWith("ftp://");
 
-// node_modules/@vuepress/shared/lib/esm/utils/isLinkHttp.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/isLinkHttp.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 var isLinkHttp = (link) => /^(https?:)?\/\//.test(link);
 
-// node_modules/@vuepress/shared/lib/esm/utils/isLinkExternal.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/isLinkExternal.js
 var isLinkExternal = (link, base = "/") => {
   if (isLinkHttp(link) || isLinkFtp(link)) {
     return true;
@@ -177,25 +177,25 @@ var isLinkExternal = (link, base = "/") => {
   return false;
 };
 
-// node_modules/@vuepress/shared/lib/esm/utils/isLinkMailto.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/isLinkMailto.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 var isLinkMailto = (link) => /^mailto:/.test(link);
 
-// node_modules/@vuepress/shared/lib/esm/utils/isLinkTel.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/isLinkTel.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 var isLinkTel = (link) => /^tel:/.test(link);
 
-// node_modules/@vuepress/shared/lib/esm/utils/isPlainObject.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/isPlainObject.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 var isPlainObject = (val) => Object.prototype.toString.call(val) === "[object Object]";
 
-// node_modules/@vuepress/shared/lib/esm/utils/normalizePackageName.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/normalizePackageName.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
@@ -222,19 +222,19 @@ var normalizePackageName = (request, org, type = null) => {
   return `@${reqOrg}/${orgPrefix}${typePrefix}${reqName}`;
 };
 
-// node_modules/@vuepress/shared/lib/esm/utils/removeEndingSlash.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/removeEndingSlash.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 var removeEndingSlash = (str) => str.replace(/\/$/, "");
 
-// node_modules/@vuepress/shared/lib/esm/utils/removeLeadingSlash.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/removeLeadingSlash.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 var removeLeadingSlash = (str) => str.replace(/^\//, "");
 
-// node_modules/@vuepress/shared/lib/esm/utils/resolveLocalePath.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/resolveLocalePath.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
@@ -254,7 +254,7 @@ var resolveLocalePath = (locales, routePath) => {
   return "/";
 };
 
-// node_modules/@vuepress/shared/lib/esm/utils/resolveRoutePathFromUrl.js
+// node_modules/.pnpm/@vuepress+shared@2.0.0-beta.35/node_modules/@vuepress/shared/lib/esm/utils/resolveRoutePathFromUrl.js
 init_define_COMMENT_OPTIONS();
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();

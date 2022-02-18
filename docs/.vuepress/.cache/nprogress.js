@@ -5,9 +5,9 @@ import {
   init_define_MZ_ZOOM_OPTIONS
 } from "./chunk-WLRDQZ5H.js";
 
-// node_modules/nprogress/nprogress.js
+// node_modules/.pnpm/nprogress@0.2.0/node_modules/nprogress/nprogress.js
 var require_nprogress = __commonJS({
-  "node_modules/nprogress/nprogress.js"(exports, module) {
+  "node_modules/.pnpm/nprogress@0.2.0/node_modules/nprogress/nprogress.js"(exports, module) {
     init_define_COMMENT_OPTIONS();
     init_define_EXTERNAL_LINK_ICON_LOCALES();
     init_define_MZ_ZOOM_OPTIONS();
