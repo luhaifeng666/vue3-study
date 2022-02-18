@@ -5,7 +5,7 @@ const BASE_URL = './docs/miniVue/'
 let getFiles = function(type) {
 	let baseUrl = type && `${type.split('/')[1]}/`
 	let urls = fs.readdirSync(`${BASE_URL}${type}`).map(item => {
-		return baseUrl + item
+		return `/miniVue/notes/reactivity/${item}`
 	})
 	return urls
 }
@@ -14,7 +14,7 @@ const pageConfig = [
 	{
 		name: '/miniVue/notes/',
 		baseUrl: 'notes/',
-		paths: ['', {
+		paths: ['/miniVue/notes/', {
 			name: 'reactivity',
 			url: 'reactivity'
 		}]
@@ -23,7 +23,7 @@ const pageConfig = [
 pageConfig.forEach(item => {
 	sidebar[item.name] = []
 	item.paths.forEach(path => {
-		if(path) {
+		if(typeof path !== 'string') {
 			let children = getFiles(`${item.baseUrl}${path.url}`)
 			let conf = {
 				title: path.name,
@@ -52,7 +52,7 @@ let config = {
 		lastUpdated: 'Last Updated',
 		sidebarDepth: 2,
 		sidebar,
-		nav: [
+		navbar: [
 			{ text: 'Home', link: '/' },
 			{ text: 'Notes', link: '/miniVue/notes/'},
 			{ text: '酱豆腐精的小站', link: 'https://luhaifeng666.github.io' },
