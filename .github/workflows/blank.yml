@@ -31,7 +31,7 @@ jobs:
         run: echo Compiling start!
       - run: git config --global user.email "youzui@hotmail.com"
       - run: git config --global user.name "luhaifeng"
-      - run: pnpm install && pnpm docs:build
+      - run: npm install && npm run docs:build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
