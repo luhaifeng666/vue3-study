@@ -12,4 +12,8 @@ describe('effect', () => {
     data.num = 1
     expect(dummy).toBe(1)
   })
+
+  it('', () => {
+    
+  })
 })

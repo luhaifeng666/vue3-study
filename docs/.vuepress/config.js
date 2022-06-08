@@ -1,5 +1,8 @@
 
 const fs = require('fs')
+const { searchPlugin } = require('@vuepress/plugin-search')
+const { commentPlugin } = require('vuepress-plugin-comment2')
+const { commentTheme } = require('./public/themes')
 const BASE_URL = './docs/miniVue/'
 
 let getFiles = function(type) {
@@ -48,7 +51,7 @@ let config = {
 	markdown: {
 		lineNumbers: true
 	},
-	themeConfig: {
+	theme: commentTheme({
 		lastUpdated: 'Last Updated',
 		sidebarDepth: 2,
 		sidebar,
@@ -58,20 +61,27 @@ let config = {
 			{ text: '酱豆腐精的小站', link: 'https://luhaifeng666.github.io' },
 			{ text: 'GitHub', link: 'https://github.com/luhaifeng666/vue3-study' },
 		],
-	},
+	}),
 	plugins: [
-		[
-			'vuepress-plugin-comment',
-			{
-				choosen: 'valine',
-				// options选项中的所有参数，会传给Valine的配置
-				options: {
-					el: '#valine-vuepress-comment',
-					appId: 'aVNQnd9rUIO93XrdeMQLBnMo-9Nh9j0Va',
-					appKey: 'BIlRvPsMx9Y6dXvfJCxNJvWf'
-				}
-			}
-		]
+		commentPlugin({
+      // 插件选项
+      provider: 'Giscus',
+      repo: 'luhaifeng666/vue3-study',
+      repoId: 'R_kgDOGMPtbQ',
+      category: 'General',
+      categoryId: 'DIC_kwDOGMPtbc4CPh3Q',
+      mapping: 'title'
+    }),
+    searchPlugin({
+      locales: {
+        '/': {
+          placeholder: 'Search',
+        },
+        '/zh/': {
+          placeholder: '搜索',
+        },
+      },
+    })
 	]
 }
 
