@@ -1,19 +1,12 @@
-import { reactive } from '../reactive'
-import { effect } from  '../effect'
-
+/*
+ * @Author: ext.luhaifeng1 ext.luhaifeng1@jd.com
+ * @Date: 2021-11-14 18:35:25
+ * @LastEditors: ext.luhaifeng1
+ * @LastEditTime: 2022-06-09 09:45:24
+ * @Description: 
+ */
 describe('effect', () => {
-  it ('should observe basic properties', () => {
-    let dummy = 0
-    const data = reactive({ num: 0 })
-    effect(() => {
-      dummy = data.num
-    })
-    expect(dummy).toBe(0)
-    data.num = 1
-    expect(dummy).toBe(1)
-  })
-
-  it('', () => {
+  it('happy path', () => {
     
   })
 })

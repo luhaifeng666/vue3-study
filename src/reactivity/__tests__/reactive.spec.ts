@@ -1,17 +1,20 @@
-import { reactive, isReactive } from '../reactive'
+/*
+ * @Author: ext.luhaifeng1 ext.luhaifeng1@jd.com
+ * @Date: 2021-11-14 14:42:52
+ * @LastEditors: ext.luhaifeng1
+ * @LastEditTime: 2022-06-09 08:22:52
+ * @Description: 
+ */
+import { reactive } from '../reactive'
 
 describe('reactive', () => {
-  it ('happy path', () => {
-    const original = { foo: 1 }
-    // 创建响应式对象
-    const observeOriginal = reactive(original)
-    // 响应式对象与原对象应该不相等，因为observeOriginal被Proxy包裹
-    expect(observeOriginal).not.toBe(original)
-    // observeOriginal 是响应式对象
-    // expect(isReactive(observeOriginal)).toBe(true)
-    // // original 不是响应式对象
-    // expect(isReactive(original)).toBe(false)
-    // 取值
-    expect(observeOriginal.foo).toBe(1)
+  it('happy path', () => {
+    const origin = { num: 0 }
+
+    const reactiveData = reactive(origin)
+
+    expect(reactiveData).not.toBe(origin)
+
+    expect(reactiveData.num).toBe(0)
   })
 })
