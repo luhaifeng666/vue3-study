@@ -1,0 +1,1 @@
+const e={key:"v-f4c6334e",path:"/miniVue/",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1654820944e3,contributors:[{name:"luhaifeng666",email:"youzui@hotmail.com",commits:1}]},filePathRelative:"miniVue/README.md"};export{e as data};

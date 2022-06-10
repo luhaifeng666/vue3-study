@@ -1,1 +1,0 @@
-const e={key:"v-402aedb2",path:"/miniVue/notes/",title:"Vue3 \u6E90\u7801\u5B66\u4E60",lang:"en-US",frontmatter:{title:"Vue3 \u6E90\u7801\u5B66\u4E60",comment:!1},excerpt:"",headers:[],git:{updatedTime:1654784877e3,contributors:[{name:"ext.luhaifeng1",email:"ext.luhaifeng1@jd.com",commits:1}]},filePathRelative:"miniVue/notes/README.md"};export{e as data};
