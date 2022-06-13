@@ -1,8 +1,8 @@
 /*
  * @Author: ext.luhaifeng1 ext.luhaifeng1@jd.com
  * @Date: 2021-11-14 18:34:45
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-10 08:28:14
+ * @LastEditors: ext.luhaifeng1
+ * @LastEditTime: 2022-06-13 08:09:01
  * @Description: 
  */
 
@@ -16,7 +16,7 @@ class ReactiveEffect {
 
   run() {
     activeEffect = this
-    this._fn()
+    return this._fn()
   }
 }
 
@@ -64,4 +64,6 @@ export function effect (fn) {
   const _effect = new ReactiveEffect(fn)
 
   _effect.run()
+
+  return _effect.run.bind(_effect)
 }
