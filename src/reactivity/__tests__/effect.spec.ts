@@ -1,8 +1,8 @@
 /*
  * @Author: ext.luhaifeng1 ext.luhaifeng1@jd.com
  * @Date: 2021-11-14 18:35:25
- * @LastEditors: ext.luhaifeng1
- * @LastEditTime: 2022-06-13 08:05:49
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-06-14 08:23:13
  * @Description: 
  */
 import { reactive } from '../reactive'
@@ -36,5 +36,29 @@ describe('effect', () => {
     const res = runner()
     expect(foo).toBe(12)
     expect(res).toBe('foo')
+  })
+
+  it('scheduler', () => {
+    let dummy
+    let run: any
+    const scheduler = jest.fn(() => {
+      run = runner
+    })
+    const obj = reactive({ foo: 1 })
+    const runner = effect(() => {
+      dummy = obj.foo
+    }, { scheduler })
+    // 首次执行 effect 时不会调用 scheduler 方法
+    expect(scheduler).not.toHaveBeenCalled()
+    // 首次执行 effect 时会调用传入的第一个方法，此时给 dummy 赋值
+    expect(dummy).toBe(1)
+    // 触发响应式对象值改变
+    obj.foo++
+    // 会执行 scheduler 方法，但是不会执行第一个参数
+    expect(scheduler).toHaveBeenCalledTimes(1)
+    expect(dummy).toBe(1)
+    // 执行 runner 方法时，会执行传入的第一个方法
+    run()
+    expect(dummy).toBe(2)
   })
 })

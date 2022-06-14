@@ -1,8 +1,8 @@
 /*
  * @Author: ext.luhaifeng1 ext.luhaifeng1@jd.com
  * @Date: 2021-11-14 18:34:45
- * @LastEditors: ext.luhaifeng1
- * @LastEditTime: 2022-06-13 08:09:01
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-06-14 08:27:37
  * @Description: 
  */
 
@@ -10,7 +10,7 @@ let activeEffect;
 class ReactiveEffect {
   private _fn: any
   
-  constructor(fn) {
+  constructor(fn, public scheduler?) {
     this._fn = fn
   }
 
@@ -56,12 +56,17 @@ export function trigger(target, key) {
   const depsMap = targetMap.get(target)
   const deps = depsMap.get(key)
   for(const dep of deps) {
-    dep.run()
+    // 判断是否存在 scheduler 方法，存在的的话执行 scheduler，否则执行run
+    if(dep.scheduler) {
+      dep.scheduler()
+    } else {
+      dep.run()
+    }
   }
 }
 
-export function effect (fn) {
-  const _effect = new ReactiveEffect(fn)
+export function effect (fn, options: any = {}) {
+  const _effect = new ReactiveEffect(fn, options.scheduler)
 
   _effect.run()
 
