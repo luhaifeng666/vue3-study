@@ -3,12 +3,18 @@ title: Vue3 源码学习
 comment: false
 ---
 
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2021-12-29 23:37:56
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-06-14 09:57:31
+ * @Description: 
+-->
+
 # Vue3 源码学习
 
 用于记录Vue3源码学习的笔记， 参考崔大的 [mini-vue](https://github.com/cuixiaorui/mini-vue), 欢迎大家去start⭐️~
 
-笔记已同步至 [酱豆腐精的小站](https://luhaifeng666.github.io/)， 欢迎各位大佬指正~。
+每篇笔记会对应一个提交分支，分支号会标记在笔记中，有兴趣的小伙伴可以切到对应分支配合笔记一起食用。
 
-结合课程一起食用，风味更佳哦~ 快加入我们，一起 ~~卷~~ 学习起来吧~
-
-![recommend](../../.vuepress/public/images/recommend.png)
+笔记已同步至 [酱豆腐精的小站](https://luhaifeng666.github.io/)， 欢迎各位大佬指正~

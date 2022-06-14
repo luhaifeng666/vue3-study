@@ -3,43 +3,19 @@ const fs = require('fs')
 const { searchPlugin } = require('@vuepress/plugin-search')
 const { commentPlugin } = require('vuepress-plugin-comment2')
 const { commentTheme } = require('./public/themes')
-const BASE_URL = './docs/miniVue/'
+const BASE_URL = './docs/miniVue/notes'
 
-let getFiles = function(type) {
-	let baseUrl = type && `${type.split('/')[1]}/`
-	let urls = fs.readdirSync(`${BASE_URL}${type}`).map(item => {
-		return `/miniVue/notes/reactivity/${item}`
-	})
-	return urls
+let getFiles = function() {
+	const urls = fs.readdirSync(BASE_URL)
+
+  return urls.filter(url => !url.includes('.md')).map(url => ({
+    text: url.split('')
+      .map((chart, index) => !index ? chart.toUpperCase() : chart)
+      .join(''),
+    collapsible: true,
+    children: fs.readdirSync(`${BASE_URL}/${url}`).map(name => `/miniVue/notes/${url}/${name}`)
+  }))
 }
-let sidebar = {}
-const pageConfig = [
-	{
-		name: '/miniVue/notes/',
-		baseUrl: 'notes/',
-		paths: ['/miniVue/notes/', {
-			name: 'reactivity',
-			url: 'reactivity'
-		}]
-	}
-]
-pageConfig.forEach(item => {
-	sidebar[item.name] = []
-	item.paths.forEach(path => {
-		if(typeof path !== 'string') {
-			let children = getFiles(`${item.baseUrl}${path.url}`)
-			let conf = {
-				title: path.name,
-				children
-			}
-			sidebar[item.name].push(conf)
-		} else {
-			sidebar[item.name].push(path)
-		}
-	})
-})
-
-console.log(JSON.stringify(sidebar))
 
 let config = {
 	title: 'vue3-study',
@@ -54,7 +30,15 @@ let config = {
 	theme: commentTheme({
 		lastUpdated: 'Last Updated',
 		sidebarDepth: 2,
-		sidebar,
+		sidebar: {
+      '/miniVue/notes/': [
+        {
+          text: '开始之前',
+          link: '/miniVue/notes/prerequisites.md',
+        },
+        ...getFiles()
+      ],
+    },
 		navbar: [
 			{ text: 'Home', link: '/' },
 			{ text: 'Notes', link: '/miniVue/notes/'},

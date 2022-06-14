@@ -1,6 +1,12 @@
-<template><div><h1 id="vue3-源码学习" tabindex="-1"><a class="header-anchor" href="#vue3-源码学习" aria-hidden="true">#</a> Vue3 源码学习</h1>
+<template><div><!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2021-12-29 23:37:56
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-06-14 09:57:31
+ * @Description: 
+-->
+<h1 id="vue3-源码学习" tabindex="-1"><a class="header-anchor" href="#vue3-源码学习" aria-hidden="true">#</a> Vue3 源码学习</h1>
 <p>用于记录Vue3源码学习的笔记， 参考崔大的 <a href="https://github.com/cuixiaorui/mini-vue" target="_blank" rel="noopener noreferrer">mini-vue<ExternalLinkIcon/></a>, 欢迎大家去start⭐️~</p>
-<p>笔记已同步至 <a href="https://luhaifeng666.github.io/" target="_blank" rel="noopener noreferrer">酱豆腐精的小站<ExternalLinkIcon/></a>， 欢迎各位大佬指正~。</p>
-<p>结合课程一起食用，风味更佳哦~ 快加入我们，一起 <s>卷</s> 学习起来吧~</p>
-<p><img src="@source/.vuepress/public/images/recommend.png" alt="recommend"></p>
+<p>每篇笔记会对应一个提交分支，分支号会标记在笔记中，有兴趣的小伙伴可以切到对应分支配合笔记一起食用。</p>
+<p>笔记已同步至 <a href="https://luhaifeng666.github.io/" target="_blank" rel="noopener noreferrer">酱豆腐精的小站<ExternalLinkIcon/></a>， 欢迎各位大佬指正~</p>
 </div></template>
