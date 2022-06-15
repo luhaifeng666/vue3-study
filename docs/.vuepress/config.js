@@ -5,7 +5,7 @@ const { commentPlugin } = require('vuepress-plugin-comment2')
 const { commentTheme } = require('./public/themes')
 const BASE_URL = './docs/miniVue/notes'
 
-let getFiles = function() {
+let getMenus = function() {
 	const urls = fs.readdirSync(BASE_URL)
 
   return urls.filter(url => !url.includes('.md')).map(url => ({
@@ -36,7 +36,7 @@ let config = {
           text: '开始之前',
           link: '/miniVue/notes/prerequisites.md',
         },
-        ...getFiles()
+        ...getMenus()
       ],
     },
 		navbar: [

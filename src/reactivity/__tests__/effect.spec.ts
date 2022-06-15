@@ -2,7 +2,7 @@
  * @Author: ext.luhaifeng1 ext.luhaifeng1@jd.com
  * @Date: 2021-11-14 18:35:25
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-14 08:23:13
+ * @LastEditTime: 2022-06-15 18:27:11
  * @Description: 
  */
 import { reactive } from '../reactive'
@@ -10,6 +10,7 @@ import { effect } from '../effect'
 
 describe('effect', () => {
   it('happy path', () => {
+    // 创建响应式对象
     const user = reactive({
       age: 10
     })
@@ -17,9 +18,11 @@ describe('effect', () => {
     effect(() => {
       nextAge = user.age + 1
     })
-
+    // 传入 effect 的方法会被立即执行一次
     expect(nextAge).toBe(11)
+    // 修改响应式对象的属性值
     user.age++
+    // 传入 effect 的方法会再次被执行
     expect(nextAge).toBe(12)
   })
 
