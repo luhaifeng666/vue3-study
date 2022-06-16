@@ -1,8 +1,8 @@
 /*
  * @Author: ext.luhaifeng1 ext.luhaifeng1@jd.com
  * @Date: 2021-11-14 18:34:45
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-14 08:27:37
+ * @LastEditors: ext.luhaifeng1
+ * @LastEditTime: 2022-06-16 15:33:28
  * @Description: 
  */
 
@@ -33,7 +33,7 @@ export function track(target, key) {
   // 如果没有（首次初始化时），则创建新的依赖池
   if (!depsMap) {
     depsMap = new Map()
-    targetMap.set(target, targetMap)
+    targetMap.set(target, depsMap)
   }
   // 从获取到的依赖池中获取该key所对应的依赖列表
   let deps = depsMap.get(key)
