@@ -1,8 +1,8 @@
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2021-11-14 19:51:15
- * @LastEditors: ext.luhaifeng1
- * @LastEditTime: 2022-06-16 17:06:25
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-06-16 17:26:44
  * @Description: effect & reactive & 依赖收集 & 触发依赖
 -->
 
@@ -334,12 +334,7 @@ export function trigger(target, key) {
   const depsMap = targetMap.get(target)
   const deps = depsMap.get(key)
   for(const dep of deps) {
-    // 判断是否存在 scheduler 方法，存在的的话执行 scheduler，否则执行run
-    if(dep.scheduler) {
-      dep.scheduler()
-    } else {
-      dep.run()
-    }
+    dep.run()
   }
 }
 ```

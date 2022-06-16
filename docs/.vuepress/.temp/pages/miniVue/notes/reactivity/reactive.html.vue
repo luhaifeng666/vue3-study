@@ -1,8 +1,8 @@
 <template><div><!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2021-11-14 19:51:15
- * @LastEditors: ext.luhaifeng1
- * @LastEditTime: 2022-06-16 17:06:25
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-06-16 17:26:44
  * @Description: effect & reactive & 依赖收集 & 触发依赖
 -->
 <h1 id="effect-reactive-依赖收集-触发依赖" tabindex="-1"><a class="header-anchor" href="#effect-reactive-依赖收集-触发依赖" aria-hidden="true">#</a> effect &amp; reactive &amp; 依赖收集 &amp; 触发依赖</h1>
@@ -287,15 +287,10 @@
   <span class="token keyword">const</span> depsMap <span class="token operator">=</span> targetMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span>
   <span class="token keyword">const</span> deps <span class="token operator">=</span> depsMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
   <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">const</span> dep <span class="token keyword">of</span> deps<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment">// 判断是否存在 scheduler 方法，存在的的话执行 scheduler，否则执行run</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>dep<span class="token punctuation">.</span>scheduler<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      dep<span class="token punctuation">.</span><span class="token function">scheduler</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-      dep<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
+    dep<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></CodeGroupItem>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></CodeGroupItem>
 <CodeGroupItem title="reactive.ts">
 <div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">// src/reactivity/reactive.ts</span>
 
