@@ -1,8 +1,8 @@
 <template><div><!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2021-11-14 19:51:15
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-16 17:26:44
+ * @LastEditors: ext.luhaifeng1
+ * @LastEditTime: 2022-06-17 10:25:39
  * @Description: effect & reactive & 依赖收集 & 触发依赖
 -->
 <h1 id="effect-reactive-依赖收集-触发依赖" tabindex="-1"><a class="header-anchor" href="#effect-reactive-依赖收集-触发依赖" aria-hidden="true">#</a> effect &amp; reactive &amp; 依赖收集 &amp; 触发依赖</h1>
@@ -230,7 +230,7 @@
 
   <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     activeEffect <span class="token operator">=</span> <span class="token keyword">this</span>
-    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 

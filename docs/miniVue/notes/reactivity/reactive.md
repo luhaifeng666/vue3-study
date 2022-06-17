@@ -1,8 +1,8 @@
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2021-11-14 19:51:15
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-16 17:26:44
+ * @LastEditors: ext.luhaifeng1
+ * @LastEditTime: 2022-06-17 10:25:39
  * @Description: effect & reactive & 依赖收集 & 触发依赖
 -->
 
@@ -271,7 +271,7 @@ class ReactiveEffect {
 
   run() {
     activeEffect = this
-    return this._fn()
+    this._fn()
   }
 }
 
