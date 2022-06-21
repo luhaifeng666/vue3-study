@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-06-21 14:48:37
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-21 16:13:09
+ * @LastEditTime: 2022-06-21 18:13:10
  * @Description: 
 -->
 # scheduler
@@ -91,9 +91,11 @@ export function effect (fn, options: any = {}) {
 
 class ReactiveEffect {
   private _fn: any
+  public scheduler: Function | undefined
   
-  constructor(fn, public scheduler?) {
+  constructor(fn, scheduler?: Function) {
     this._fn = fn
+    this.scheduler = scheduler
   }
 
   run() {

@@ -2,11 +2,11 @@
  * @Author: ext.luhaifeng1 ext.luhaifeng1@jd.com
  * @Date: 2021-11-14 18:35:25
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-15 18:27:11
+ * @LastEditTime: 2022-06-21 22:36:21
  * @Description: 
  */
 import { reactive } from '../reactive'
-import { effect } from '../effect'
+import { effect, stop } from '../effect'
 
 describe('effect', () => {
   it('happy path', () => {
@@ -63,5 +63,37 @@ describe('effect', () => {
     // 执行 runner 方法时，会执行传入的第一个方法
     run()
     expect(dummy).toBe(2)
+  })
+
+  it('stop', () => {
+    let dummy
+    const obj = reactive({ prop: 1 })
+    const runner = effect(() => {
+      dummy = obj.prop
+    })
+    obj.prop = 2
+    expect(dummy).toBe(2)
+    // 调用 stop 后，响应式对象属性变化时不再触发 fn
+    stop(runner)
+    obj.prop = 3
+    expect(dummy).toBe(2)
+    // 被停用的 effect 仍可以被调用
+    runner()
+    expect(dummy).toBe(3)
+  })
+  
+  it('onStop', () => {
+    const obj = reactive({ prop: 1 })
+    const onStop = jest.fn()
+    let dummy
+    const runner = effect(() => {
+      dummy = obj.prop
+    }, {
+      onStop
+    })
+    expect(dummy).toBe(1)
+    // 当调用stop时，onStop 会被调用一次
+    stop(runner)
+    expect(onStop).toBeCalledTimes(1)
   })
 })
