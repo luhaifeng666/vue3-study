@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-f4c6334e","path":"/miniVue/","title":"","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1655799338000,"contributors":[{"name":"luhaifeng666","email":"youzui@hotmail.com","commits":1}]},"filePathRelative":"miniVue/README.md"}');export{e as data};
