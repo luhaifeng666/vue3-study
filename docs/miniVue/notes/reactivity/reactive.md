@@ -1,8 +1,8 @@
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2021-11-14 19:51:15
- * @LastEditors: ext.luhaifeng1
- * @LastEditTime: 2022-06-17 10:25:39
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-06-21 15:40:38
  * @Description: effect & reactive & 依赖收集 & 触发依赖
 -->
 
@@ -14,12 +14,13 @@
 
 在 Vue3 中，[reactive](https://v3.cn.vuejs.org/api/basic-reactivity.html#reactive) 方法被用于创建一个对象的 **响应式副本**。这里可以拆成两个部分来理解，即 **响应式** 以及 **副本**。
 
-### 副本
+## 副本
 
 我们先来看看 **副本** 这个部分。在实现 `reactive` 方法之前，我们先来写下它的测试用例，看看它需要做些啥：
 
 :::: code-group
 ::: code-group-item reactive.spec.ts
+
 ```ts
 // src/reactivity/__tests__/reactive.spec.ts
 
@@ -35,15 +36,17 @@ describe('reactive', () => {
   })
 })
 ```
+
 :::
 ::::
 
-#### 实现 `reactive`
+### 实现 `reactive`
 
 通过测试用例我们不难发现，其实 `reactive` 做的事情很简单，就是创建一个对象副本，那这个 **副本** 该怎么创建呢？答案是使用 [Proxy](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy) 👇
 
 :::: code-group
 ::: code-group-item reactive.ts
+
 ```ts
 // src/reactivity/reactive.ts
 
@@ -62,10 +65,11 @@ export const reactive = (raw) => {
   })
 }
 ```
+
 :::
 ::::
 
-### 响应式
+## 响应式
 
 现在我们已经可以通过 `reactive` 方法获取目标对象的 **副本** 了，那 **响应式** 部分又该如何实现呢？
 
@@ -87,6 +91,7 @@ export const reactive = (raw) => {
 
 :::: code-group
 ::: code-group-item effect.spec.ts
+
 ```ts {14}
 // src/reactivity/__test__/effect.spec.ts
 
@@ -109,10 +114,11 @@ describe('effect', () => {
   })
 })
 ```
+
 :::
 ::::
 
-#### 实现`effect`
+### 实现`effect`
 
 接下来我们需要实现 `effect` 模块的功能。
 
@@ -120,11 +126,13 @@ describe('effect', () => {
 
 :::: code-group
 ::: code-group-item effect.ts
+
 ```ts
 // src/reactivity/effect.ts
 
 export function effect(fn) {}
 ```
+
 :::
 ::::
 
@@ -132,6 +140,7 @@ export function effect(fn) {}
 
 :::: code-group
 ::: code-group-item effect.ts
+
 ```ts
 // src/reactivity/effect.ts
 
@@ -139,6 +148,7 @@ const targetMap = new Map()
 
 export function effect(fn) {}
 ```
+
 :::
 ::::
 
@@ -150,6 +160,7 @@ export function effect(fn) {}
 
 :::: code-group
 ::: code-group-item effect.ts
+
 ```ts
 // src/reactivity/effect.ts
 
@@ -165,10 +176,13 @@ export function track(target, key) {
 
 export function effect(fn) {}
 ```
+
 :::
 
 ::: code-group-item reactive.ts
+
 ```ts
+
 // src/reactivity/reactive.ts
 
 import { track } from './effect'
@@ -190,6 +204,7 @@ export const reactive = (raw) => {
   })
 }
 ```
+
 :::
 ::::
 
@@ -210,6 +225,7 @@ export const reactive = (raw) => {
 
 :::: code-group
 ::: code-group-item effect.ts
+
 ```ts {25}
 // src/reactivity/effect.ts
 
@@ -240,6 +256,7 @@ export function track(target, key) {
 
 export function effect(fn) {}
 ```
+
 :::
 ::::
 
@@ -257,6 +274,7 @@ export function effect(fn) {}
 
 :::: code-group
 ::: code-group-item effect.ts
+
 ```ts {3,13,14,41,48}
 // src/reactivity/effect.ts
 
@@ -308,6 +326,7 @@ export function effect(fn) {
   _effect.run()
 }
 ```
+
 :::
 ::::
 
@@ -321,6 +340,7 @@ export function effect(fn) {
 
 :::: code-group
 ::: code-group-item effect.ts
+
 ```ts
 // src/reactivity/effect.ts
 
@@ -338,9 +358,11 @@ export function trigger(target, key) {
   }
 }
 ```
+
 :::
 
 ::: code-group-item reactive.ts
+
 ```ts
 // src/reactivity/reactive.ts
 
@@ -365,6 +387,7 @@ export const reactive = (raw) => {
   })
 }
 ```
+
 :::
 ::::
 

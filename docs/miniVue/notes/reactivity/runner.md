@@ -1,11 +1,11 @@
 <!--
  * @Author: ext.luhaifeng1 ext.luhaifeng1@jd.com
  * @Date: 2022-06-17 09:29:23
- * @LastEditors: ext.luhaifeng1
- * @LastEditTime: 2022-06-17 10:47:48
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-06-21 15:41:01
  * @Description: 
 -->
-# 实现 runner
+# runner
 
 ::: tip
 本篇笔记对应的分支号为: `main分支：8fcd786`
@@ -15,7 +15,7 @@
 
 ## `runner` 是什么 🤔
 
-还记得上一节在实现 `依赖收集` 以及 `依赖触发` 时的 `effect` 方法么? 
+还记得上一节在实现 `依赖收集` 以及 `依赖触发` 时的 `effect` 方法么?
 
 > **`runner` 就是 `effect` 的返回的一个 `函数`**。
 
@@ -32,6 +32,7 @@
 
 :::: code-group
 :::code-group-item effect.spec.ts
+
 ```ts
 // src/reactivity/__tests__/effect.spec.ts
 
@@ -50,6 +51,7 @@ it('renturn a runner when call effect', () => {
   expect(res).toBe('foo')
 })
 ```
+
 :::
 ::::
 
@@ -57,6 +59,7 @@ it('renturn a runner when call effect', () => {
 
 :::: code-group
 :::code-group-item effect.ts
+
 ```ts
 // src/reactivity/effect.ts
 
@@ -67,6 +70,7 @@ export function effect(fn) {
   _effect.run()
 }
 ```
+
 :::
 ::::
 
@@ -78,6 +82,7 @@ export function effect(fn) {
 
 :::: code-group
 :::code-group-item effect.ts
+
 ```ts
 // src/reactivity/effect.ts
 
@@ -90,6 +95,7 @@ export function effect(fn) {
   return _effect.run.bind(_effect)
 }
 ```
+
 :::
 ::::
 
@@ -97,6 +103,7 @@ export function effect(fn) {
 
 :::: code-group
 :::code-group-item effect.ts
+
 ```ts
 // src/reactivity/effect.ts
 
@@ -113,6 +120,7 @@ class ReactiveEffect {
   }
 }
 ```
+
 :::
 ::::
 

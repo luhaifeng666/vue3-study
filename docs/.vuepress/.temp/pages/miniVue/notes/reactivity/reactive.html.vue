@@ -1,8 +1,8 @@
 <template><div><!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2021-11-14 19:51:15
- * @LastEditors: ext.luhaifeng1
- * @LastEditTime: 2022-06-17 10:25:39
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-06-21 15:40:38
  * @Description: effect & reactive & 依赖收集 & 触发依赖
 -->
 <h1 id="effect-reactive-依赖收集-触发依赖" tabindex="-1"><a class="header-anchor" href="#effect-reactive-依赖收集-触发依赖" aria-hidden="true">#</a> effect &amp; reactive &amp; 依赖收集 &amp; 触发依赖</h1>
@@ -10,7 +10,7 @@
 <p>本篇笔记对应的分支号为: <code v-pre>main分支：e8bb112</code></p>
 </div>
 <p>在 Vue3 中，<a href="https://v3.cn.vuejs.org/api/basic-reactivity.html#reactive" target="_blank" rel="noopener noreferrer">reactive<ExternalLinkIcon/></a> 方法被用于创建一个对象的 <strong>响应式副本</strong>。这里可以拆成两个部分来理解，即 <strong>响应式</strong> 以及 <strong>副本</strong>。</p>
-<h3 id="副本" tabindex="-1"><a class="header-anchor" href="#副本" aria-hidden="true">#</a> 副本</h3>
+<h2 id="副本" tabindex="-1"><a class="header-anchor" href="#副本" aria-hidden="true">#</a> 副本</h2>
 <p>我们先来看看 <strong>副本</strong> 这个部分。在实现 <code v-pre>reactive</code> 方法之前，我们先来写下它的测试用例，看看它需要做些啥：</p>
 <CodeGroup>
 <CodeGroupItem title="reactive.spec.ts">
@@ -29,7 +29,7 @@
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></CodeGroupItem>
 </CodeGroup>
-<h4 id="实现-reactive" tabindex="-1"><a class="header-anchor" href="#实现-reactive" aria-hidden="true">#</a> 实现 <code v-pre>reactive</code></h4>
+<h3 id="实现-reactive" tabindex="-1"><a class="header-anchor" href="#实现-reactive" aria-hidden="true">#</a> 实现 <code v-pre>reactive</code></h3>
 <p>通过测试用例我们不难发现，其实 <code v-pre>reactive</code> 做的事情很简单，就是创建一个对象副本，那这个 <strong>副本</strong> 该怎么创建呢？答案是使用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank" rel="noopener noreferrer">Proxy<ExternalLinkIcon/></a> 👇</p>
 <CodeGroup>
 <CodeGroupItem title="reactive.ts">
@@ -51,7 +51,7 @@
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></CodeGroupItem>
 </CodeGroup>
-<h3 id="响应式" tabindex="-1"><a class="header-anchor" href="#响应式" aria-hidden="true">#</a> 响应式</h3>
+<h2 id="响应式" tabindex="-1"><a class="header-anchor" href="#响应式" aria-hidden="true">#</a> 响应式</h2>
 <p>现在我们已经可以通过 <code v-pre>reactive</code> 方法获取目标对象的 <strong>副本</strong> 了，那 <strong>响应式</strong> 部分又该如何实现呢？</p>
 <p>所谓 <strong>响应式</strong>， 其实本质上就做了两件事情：</p>
 <blockquote>
@@ -94,7 +94,7 @@
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlight-line">&nbsp;</div><br><br><br><br><br><br></div><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></CodeGroupItem>
 </CodeGroup>
-<h4 id="实现effect" tabindex="-1"><a class="header-anchor" href="#实现effect" aria-hidden="true">#</a> 实现<code v-pre>effect</code></h4>
+<h3 id="实现effect" tabindex="-1"><a class="header-anchor" href="#实现effect" aria-hidden="true">#</a> 实现<code v-pre>effect</code></h3>
 <p>接下来我们需要实现 <code v-pre>effect</code> 模块的功能。</p>
 <p>根据上面的描述，<code v-pre>effect</code> 接受一个函数作为参数，既如此先定义一下 <code v-pre>effect</code> 方法：</p>
 <CodeGroup>
@@ -134,7 +134,8 @@
 <span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">effect</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></CodeGroupItem>
 <CodeGroupItem title="reactive.ts">
-<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">// src/reactivity/reactive.ts</span>
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code>
+<span class="token comment">// src/reactivity/reactive.ts</span>
 
 <span class="token keyword">import</span> <span class="token punctuation">{</span> track <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./effect'</span>
 
@@ -154,7 +155,7 @@
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></CodeGroupItem>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></CodeGroupItem>
 </CodeGroup>
 <p>接下来，我们需要实现 <code v-pre>track</code> 这部分的功能。在动手实现之前，我们先来捋一捋 <code v-pre>track</code> 需要做哪些事情:</p>
 <blockquote>
