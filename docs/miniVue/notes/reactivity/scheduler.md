@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-06-21 14:48:37
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-21 18:13:10
+ * @LastEditTime: 2022-06-24 23:58:28
  * @Description: 
 -->
 # scheduler
@@ -15,7 +15,7 @@
 
 ## 什么是 scheduler
 
-`scheduler` 是个函数，在首次调用 `effect` 时不会被执行。传入 `scheduler` 后，当响应式对象的属性发生变化时，`effect` 的第一个参数 `fn` 不会再次执行。如果需要执行 `fn`， 需要执行 `effect` 返回的 `runner` 函数。
+`scheduler` 是个函数，在首次调用 `effect` 时不会被执行。传入 `scheduler` 后，当响应式对象的属性发生变化时，`effect` 的第一个参数 `fn` 不会再次执行，而是会执行 `scheduler`。如果需要执行 `fn`， 需要执行 `effect` 返回的 `runner` 函数。
 
 ## 实现 scheduler
 

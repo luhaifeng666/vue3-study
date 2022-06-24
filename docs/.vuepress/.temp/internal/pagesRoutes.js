@@ -6,5 +6,6 @@ export const pagesRoutes = [
   ["v-8b74b6cc","/miniVue/notes/reactivity/reactive.html",{"title":"effect & reactive & 依赖收集 & 触发依赖"},["/miniVue/notes/reactivity/reactive","/miniVue/notes/reactivity/reactive.md"]],
   ["v-23cca943","/miniVue/notes/reactivity/runner.html",{"title":"runner"},["/miniVue/notes/reactivity/runner","/miniVue/notes/reactivity/runner.md"]],
   ["v-0390d524","/miniVue/notes/reactivity/scheduler.html",{"title":"scheduler"},["/miniVue/notes/reactivity/scheduler","/miniVue/notes/reactivity/scheduler.md"]],
+  ["v-cb205b9e","/miniVue/notes/reactivity/stop.html",{"title":"stop"},["/miniVue/notes/reactivity/stop","/miniVue/notes/reactivity/stop.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
 ]

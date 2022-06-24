@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2021-11-14 19:51:15
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-21 15:40:38
+ * @LastEditTime: 2022-06-21 23:15:20
  * @Description: effect & reactive & 依赖收集 & 触发依赖
 -->
 <h1 id="effect-reactive-依赖收集-触发依赖" tabindex="-1"><a class="header-anchor" href="#effect-reactive-依赖收集-触发依赖" aria-hidden="true">#</a> effect &amp; reactive &amp; 依赖收集 &amp; 触发依赖</h1>
@@ -94,7 +94,7 @@
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlight-line">&nbsp;</div><br><br><br><br><br><br></div><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></CodeGroupItem>
 </CodeGroup>
-<h3 id="实现effect" tabindex="-1"><a class="header-anchor" href="#实现effect" aria-hidden="true">#</a> 实现<code v-pre>effect</code></h3>
+<h3 id="实现-effect" tabindex="-1"><a class="header-anchor" href="#实现-effect" aria-hidden="true">#</a> 实现 <code v-pre>effect</code></h3>
 <p>接下来我们需要实现 <code v-pre>effect</code> 模块的功能。</p>
 <p>根据上面的描述，<code v-pre>effect</code> 接受一个函数作为参数，既如此先定义一下 <code v-pre>effect</code> 方法：</p>
 <CodeGroup>
