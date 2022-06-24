@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2021-11-14 19:51:15
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-21 15:40:38
+ * @LastEditTime: 2022-06-21 23:15:20
  * @Description: effect & reactive & 依赖收集 & 触发依赖
 -->
 
@@ -118,7 +118,7 @@ describe('effect', () => {
 :::
 ::::
 
-### 实现`effect`
+### 实现 `effect`
 
 接下来我们需要实现 `effect` 模块的功能。
 
