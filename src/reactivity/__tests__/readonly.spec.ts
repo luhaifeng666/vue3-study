@@ -2,11 +2,11 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-06-25 16:53:52
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-25 17:43:13
+ * @LastEditTime: 2022-06-26 14:56:42
  * @Description: 
  */
 
-import { readonly } from '../reactive'
+import { readonly, isReadonly } from '../reactive'
 
 describe('readonly', () => {
   it('happy path', () => {
@@ -14,6 +14,9 @@ describe('readonly', () => {
     const wrapped = readonly(original)
     expect(wrapped).not.toBe(original)
     expect(wrapped.foo).toBe(1)
+    // 判断是否是 readonly 对象
+    expect(isReadonly(original)).toBe(false)
+    expect(isReadonly(wrapped)).toBe(true)
   })
 
   it('warn when call set', () => {

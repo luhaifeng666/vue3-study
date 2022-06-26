@@ -2,13 +2,21 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2021-11-14 15:06:13
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-25 17:45:26
+ * @LastEditTime: 2022-06-26 14:55:27
  * @Description: 
  */
 import { track, trigger } from './effect'
+import { ReactiveFlags } from './reactive'
 
 function createGetter(isReadonly = false) {
   return function(target, key) {
+    // 判断是否是 reactive 对象
+    if (key === ReactiveFlags.IS_REACTIVE) {
+      return !isReadonly
+    } else if (key === ReactiveFlags.IS_READONLY) {
+      // 判断是否是 readonly 对象
+      return isReadonly
+    }
     const res = Reflect.get(target, key)
     // 收集依赖
     !isReadonly && track(target, key)
