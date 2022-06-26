@@ -1,3 +1,10 @@
+/*
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-06-26 10:05:23
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-06-26 10:10:05
+ * @Description: 
+ */
 
 const fs = require('fs')
 const { searchPlugin } = require('@vuepress/plugin-search')
@@ -8,7 +15,11 @@ const BASE_URL = './docs/miniVue/notes'
 let getMenus = function() {
 	const urls = fs.readdirSync(BASE_URL)
 
-  return urls.filter(url => !url.includes('.md')).map(url => ({
+  return urls.filter(
+    url => ['.md', '.DS_Store'].every(
+      item => !url.includes(item)
+    )
+  ).map(url => ({
     text: url.split('')
       .map((chart, index) => !index ? chart.toUpperCase() : chart)
       .join(''),
