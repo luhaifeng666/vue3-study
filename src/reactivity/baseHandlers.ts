@@ -2,12 +2,17 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2021-11-14 15:06:13
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-26 14:55:27
+ * @LastEditTime: 2022-06-26 15:24:52
  * @Description: 
  */
 import { track, trigger } from './effect'
 import { ReactiveFlags } from './reactive'
 
+/**
+ * 用于生成 get 方法
+ * @param isReadonly 是否是 readonly 对象
+ * @returns 
+ */
 function createGetter(isReadonly = false) {
   return function(target, key) {
     // 判断是否是 reactive 对象
@@ -24,6 +29,7 @@ function createGetter(isReadonly = false) {
   }
 }
 
+// 用于生成 set 方法
 function createSetter() {
   return function(target, key, value) {
     const res = Reflect.set(target, key, value)

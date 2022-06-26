@@ -8,5 +8,6 @@ export const pagesRoutes = [
   ["v-b8c3a658","/miniVue/notes/reactivity/03_scheduler.html",{"title":"scheduler"},["/miniVue/notes/reactivity/03_scheduler","/miniVue/notes/reactivity/03_scheduler.md"]],
   ["v-05db1f42","/miniVue/notes/reactivity/04_stop.html",{"title":"stop"},["/miniVue/notes/reactivity/04_stop","/miniVue/notes/reactivity/04_stop.md"]],
   ["v-37892dc3","/miniVue/notes/reactivity/05_readonly.html",{"title":"readonly"},["/miniVue/notes/reactivity/05_readonly","/miniVue/notes/reactivity/05_readonly.md"]],
+  ["v-bc670b30","/miniVue/notes/reactivity/06_reactiveOrReadonly.html",{"title":"isReactive & isReadOnly"},["/miniVue/notes/reactivity/06_reactiveOrReadonly","/miniVue/notes/reactivity/06_reactiveOrReadonly.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
 ]
