@@ -9,14 +9,16 @@ export const pagesComponents = {
   "v-402aedb2": defineAsyncComponent(() => import(/* webpackChunkName: "v-402aedb2" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/miniVue/notes/index.html.vue")),
   // path: /miniVue/notes/prerequisites.html
   "v-29a0bfe3": defineAsyncComponent(() => import(/* webpackChunkName: "v-29a0bfe3" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/miniVue/notes/prerequisites.html.vue")),
-  // path: /miniVue/notes/reactivity/reactive.html
-  "v-8b74b6cc": defineAsyncComponent(() => import(/* webpackChunkName: "v-8b74b6cc" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/miniVue/notes/reactivity/reactive.html.vue")),
-  // path: /miniVue/notes/reactivity/runner.html
-  "v-23cca943": defineAsyncComponent(() => import(/* webpackChunkName: "v-23cca943" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/miniVue/notes/reactivity/runner.html.vue")),
-  // path: /miniVue/notes/reactivity/scheduler.html
-  "v-0390d524": defineAsyncComponent(() => import(/* webpackChunkName: "v-0390d524" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/miniVue/notes/reactivity/scheduler.html.vue")),
-  // path: /miniVue/notes/reactivity/stop.html
-  "v-cb205b9e": defineAsyncComponent(() => import(/* webpackChunkName: "v-cb205b9e" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/miniVue/notes/reactivity/stop.html.vue")),
+  // path: /miniVue/notes/reactivity/01_reactive.html
+  "v-aec07b30": defineAsyncComponent(() => import(/* webpackChunkName: "v-aec07b30" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/miniVue/notes/reactivity/01_reactive.html.vue")),
+  // path: /miniVue/notes/reactivity/02_runner.html
+  "v-f6da2ddc": defineAsyncComponent(() => import(/* webpackChunkName: "v-f6da2ddc" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/miniVue/notes/reactivity/02_runner.html.vue")),
+  // path: /miniVue/notes/reactivity/03_scheduler.html
+  "v-b8c3a658": defineAsyncComponent(() => import(/* webpackChunkName: "v-b8c3a658" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/miniVue/notes/reactivity/03_scheduler.html.vue")),
+  // path: /miniVue/notes/reactivity/04_stop.html
+  "v-05db1f42": defineAsyncComponent(() => import(/* webpackChunkName: "v-05db1f42" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/miniVue/notes/reactivity/04_stop.html.vue")),
+  // path: /miniVue/notes/reactivity/05_readonly.html
+  "v-37892dc3": defineAsyncComponent(() => import(/* webpackChunkName: "v-37892dc3" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/miniVue/notes/reactivity/05_readonly.html.vue")),
   // path: /404.html
   "v-3706649a": defineAsyncComponent(() => import(/* webpackChunkName: "v-3706649a" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/404.html.vue")),
 }
