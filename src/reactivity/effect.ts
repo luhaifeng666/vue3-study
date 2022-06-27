@@ -2,13 +2,14 @@
  * @Author: ext.luhaifeng1 ext.luhaifeng1@jd.com
  * @Date: 2021-11-14 18:34:45
  * @LastEditors: ext.luhaifeng1
- * @LastEditTime: 2022-06-22 17:58:41
+ * @LastEditTime: 2022-06-27 22:38:45
  * @Description: 
  */
 
 import { extend } from '../shared'
 
 let activeEffect;
+let shouldTrack; // 标记是否应该进行收集
 class ReactiveEffect {
   private _fn: any
   public scheduler: Function | undefined
@@ -22,8 +23,16 @@ class ReactiveEffect {
   }
 
   run() {
+    if (!this.active) {
+      return this._fn()
+    }
+
+    shouldTrack = true
     activeEffect = this
-    return this._fn()
+    const result = this._fn()
+    shouldTrack = false
+
+    return result
   }
 
   stop() {
@@ -45,9 +54,17 @@ function cleanEffect(effect) {
   effect.deps.forEach((dep: any) => {
     dep.delete(effect)
   })
+  // 清空deps
+  effect.deps.length = 0
 }
 
 const targetMap = new Map() // 存放依赖映射关系
+
+// 判断是否在收集中
+
+function isTracking() {
+  return shouldTrack && activeEffect !== undefined
+}
 
 /**
  * 收集依赖
@@ -55,6 +72,7 @@ const targetMap = new Map() // 存放依赖映射关系
  * @param key 收集该key所对应的依赖
  */
 export function track(target, key) {
+  if (!isTracking()) return
   // 查找该对象对应的依赖池
   let depsMap = targetMap.get(target)
   // 如果没有（首次初始化时），则创建新的依赖池
@@ -69,12 +87,11 @@ export function track(target, key) {
     deps = new Set()
     depsMap.set(key, deps)
   }
-
-  if (activeEffect) {
-    // 将依赖对象保存到列表中
-    deps.add(activeEffect)
-    activeEffect.deps.push(deps)
-  }
+  // 避免重复收集
+  if (deps.has(activeEffect)) return
+  // 将依赖对象保存到列
+  deps.add(activeEffect)
+  activeEffect.deps.push(deps)
 }
 
 /**
