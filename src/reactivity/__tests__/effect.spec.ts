@@ -1,8 +1,8 @@
 /*
  * @Author: ext.luhaifeng1 ext.luhaifeng1@jd.com
  * @Date: 2021-11-14 18:35:25
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-21 22:36:21
+ * @LastEditors: ext.luhaifeng1
+ * @LastEditTime: 2022-06-27 22:21:59
  * @Description: 
  */
 import { reactive } from '../reactive'
@@ -75,7 +75,10 @@ describe('effect', () => {
     expect(dummy).toBe(2)
     // 调用 stop 后，响应式对象属性变化时不再触发 fn
     stop(runner)
-    obj.prop = 3
+    // obj.prop = 3
+    // obj.prop = obj.prop + 1
+    // get  =>  set
+    obj.prop++
     expect(dummy).toBe(2)
     // 被停用的 effect 仍可以被调用
     runner()
