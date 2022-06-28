@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2021-11-14 19:51:15
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-26 10:10:52
+ * @LastEditTime: 2022-06-28 14:07:40
  * @Description: effect & reactive & 依赖收集 & 触发依赖
 -->
 
@@ -93,7 +93,7 @@ export const reactive = (raw) => {
 ::: code-group-item effect.spec.ts
 
 ```ts {14}
-// src/reactivity/__test__/effect.spec.ts
+// src/reactivity/__tests__/effect.spec.ts
 
 describe('effect', () => {
   it('happy path', () => {

@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-06-21 22:58:23
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-25 00:21:04
+ * @LastEditTime: 2022-06-28 15:09:38
  * @Description: 
 -->
 # stop
@@ -260,7 +260,7 @@ class ReactiveEffect {
 ::: code-group-item effect.spec.ts
 
 ```ts
-// src/reactivity/__test__/effect.spec.ts
+// src/reactivity/__tests__/effect.spec.ts
 
 it('onStop', () => {
   const obj = reactive({ prop: 1 })
@@ -368,3 +368,148 @@ export const extend = Object.assign
 ::::
 
 行文至此，`stop` 以及 `onStop` 方法实现完成~
+
+# stop 功能优化
+
+:::tip
+优化对应的分支号为: `main分支：fca2f92`
+:::
+
+在上述 `stop` 的测试用例中，存在一种边缘情况。我们一起来看下当我们将 `obj.prop = 3` 这行代码替换为 `obj.foo++` 会发生什么呢：
+
+:::: code-group
+::: code-group-item effect.spec.ts
+
+```ts{13,16}
+// src/reactive/__tests__/effect.spec.ts
+
+it('stop', () => {
+    let dummy
+    const obj = reactive({ prop: 1 })
+    const runner = effect(() => {
+      dummy = obj.prop
+    })
+    obj.prop = 2
+    expect(dummy).toBe(2)
+    // 调用 stop 后，响应式对象属性变化时不再触发 fn
+    stop(runner)
+    // obj.prop = 3
+    // obj.prop = obj.prop + 1
+    // get  =>  set
+    obj.prop++
+    expect(dummy).toBe(2)
+    // 被停用的 effect 仍可以被调用
+    runner()
+    expect(dummy).toBe(3)
+  })
+```
+
+:::
+::::
+
+![stop](https://user-images.githubusercontent.com/9375823/176107392-a2f7854f-813f-40f0-9ba3-d1b02f06ea78.png)
+
+我们可以看到，`第17行` 的测试用例失败了！这是为啥呢？
+
+因为当我们执行 `obj.foo++` 操作时，等于执行的是 `obj.foo = obj.foo + 1`，在此期间会触发 `get` 操作，而在进行 `get` 操作的过程中，会进行 `依赖收集`，此时又会将 `activeEffect` 对象收集到 `deps` 中，之后在进行 `set` 操作时，又会执行传入 `effect` 的 `fn`，这样一来不就相当于我们在 `stop` 中进行的清空操作白费了么？
+
+因此，我们需要定义一个变量 `shouldTrack` 来标记当前的依赖是否需要被收集。当 `shouldTrack === false` 时，表示当前的依赖不应该被收集。依赖收集的操作在 `track` 中，我们来对其进行修改：
+
+:::: code-group
+::: code-group-item effect.ts
+
+```ts {3,26}
+// src/reactivity/effect.ts
+
+let shouldTrack = false // 标记是否应该进行收集
+
+/**
+ * 收集依赖
+ * @param target 需要收集依赖的对象
+ * @param key 收集该key所对应的依赖
+ */
+export function track(target, key) {
+  // 查找该对象对应的依赖池
+  let depsMap = targetMap.get(target)
+  // 如果没有（首次初始化时），则创建新的依赖池
+  if (!depsMap) {
+    depsMap = new Map()
+    targetMap.set(target, depsMap)
+  }
+  // 从获取到的依赖池中获取该key所对应的依赖列表
+  let deps = depsMap.get(key)
+  // 如果没有，则新建一个该key对应的列表
+  if (!deps) {
+    deps = new Set()
+    depsMap.set(key, deps)
+  }
+  if (!activeEffect) return
+  if (!shouldTrack) return
+  // 将依赖对象保存到列
+  deps.add(activeEffect)
+  activeEffect.deps.push(deps)
+}
+```
+
+:::
+::::
+
+修改完成后，此时的测试是无法通过的，因为 `shouldTrack` 的初始值为 `false`，当第一次运行 `run` 方法时，依赖收集的逻辑会被跳过。因此，我们需要在 `run` 方法中进行判断，**如果没有执行过 `stop` 操作，我们应保持原有逻辑，否则直接返回 `this._fn()`。**
+
+那我们该如何判断是否已经执行过 `stop` 了呢？在实现 `stop` 时，我们当时定义了一个属性：`active`，用于标识是否执行过 `stop`, 因此，我们可以用它来进行判断：
+
+:::: code-group
+::: code-group-item effect.ts
+
+```ts
+// src/reactivity/effect.ts
+
+
+class ReactiveEffect {
+  /** 省略一大波代码 */
+
+  run() {
+    if (!this.active) {
+      return this._fn()
+    }
+
+    shouldTrack = true
+    activeEffect = this
+    const result = this._fn()
+    shouldTrack = false
+
+    return result
+  }
+}
+```
+
+:::
+::::
+
+::: warning 注意:
+在设置完 `shouldTrack = true` 并执行了 `this._fn()` 之后，需要将 `shouldTrack` 还原为 `false`，否则下次依旧会进行依赖收集！
+:::
+
+这样一来，我们的测试就可以完美通过了~ 🥳
+
+## 代码优化
+
+现在我们回过头来再看看代码有什么值得优化的地方。
+
+在 `tarck` 方法中，我们通过以下两个逻辑判断是否应该进行依赖收集：
+
+```ts
+if (!activeEffect) return // 如果 activeEffect 不存在，直接返回
+if (!shouldTrack) return // 如果 shouldTrack = false，直接返回
+```
+
+这种写法有点啰嗦，我们可以将这段逻辑封装成一个方法：
+
+```ts
+// 判断是否在收集中
+function isTracking() {
+  return shouldTrack && activeEffect !== undefined
+}
+```
+
+这样一来代码会显得更优雅一些。
