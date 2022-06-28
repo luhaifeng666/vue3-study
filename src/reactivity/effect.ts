@@ -1,15 +1,15 @@
 /*
  * @Author: ext.luhaifeng1 ext.luhaifeng1@jd.com
  * @Date: 2021-11-14 18:34:45
- * @LastEditors: ext.luhaifeng1
- * @LastEditTime: 2022-06-27 22:38:45
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-06-28 14:56:01
  * @Description: 
  */
 
 import { extend } from '../shared'
 
-let activeEffect;
-let shouldTrack; // 标记是否应该进行收集
+let activeEffect
+let shouldTrack = false // 标记是否应该进行收集
 class ReactiveEffect {
   private _fn: any
   public scheduler: Function | undefined
@@ -61,7 +61,6 @@ function cleanEffect(effect) {
 const targetMap = new Map() // 存放依赖映射关系
 
 // 判断是否在收集中
-
 function isTracking() {
   return shouldTrack && activeEffect !== undefined
 }
