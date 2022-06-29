@@ -11,5 +11,6 @@ export const pagesRoutes = [
   ["v-bc670b30","/miniVue/notes/reactivity/06_reactiveOrReadonly.html",{"title":"isReactive & isReadOnly"},["/miniVue/notes/reactivity/06_reactiveOrReadonly","/miniVue/notes/reactivity/06_reactiveOrReadonly.md"]],
   ["v-464fa7c2","/miniVue/notes/reactivity/07_nestedReactiveAndReadonly.html",{"title":"reactive & readonly 对象嵌套功能"},["/miniVue/notes/reactivity/07_nestedReactiveAndReadonly","/miniVue/notes/reactivity/07_nestedReactiveAndReadonly.md"]],
   ["v-ec2b32d8","/miniVue/notes/reactivity/08_shallowReadonly.html",{"title":"shallowReadonly"},["/miniVue/notes/reactivity/08_shallowReadonly","/miniVue/notes/reactivity/08_shallowReadonly.md"]],
+  ["v-453eef05","/miniVue/notes/reactivity/09_isProxy.html",{"title":"isProxy"},["/miniVue/notes/reactivity/09_isProxy","/miniVue/notes/reactivity/09_isProxy.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
 ]
