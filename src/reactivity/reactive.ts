@@ -1,8 +1,8 @@
 /*
  * @Author: ext.luhaifeng1 ext.luhaifeng1@jd.com
  * @Date: 2021-11-14 14:41:24
- * @LastEditors: ext.luhaifeng1
- * @LastEditTime: 2022-06-29 17:46:16
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-06-29 21:00:07
  * @Description: 
  */
 import { mutableHandlers, readonlyHandlers, shallowReadonlyHandlers } from './baseHandlers'
@@ -55,3 +55,6 @@ export const isReactive = value => !!value[ReactiveFlags.IS_REACTIVE]
 
 // 判断是否是 readonly 对象
 export const isReadonly = value => !!value[ReactiveFlags.IS_READONLY]
+
+// 判断是否是 Proxy 对象
+export const isProxy = value => isReactive(value) || isReadonly(value)

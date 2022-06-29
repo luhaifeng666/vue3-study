@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-06-29 10:41:10
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-29 11:21:03
+ * @LastEditTime: 2022-06-29 20:56:39
  * @Description: 
 -->
 # reactive & readonly 对象嵌套功能
@@ -63,7 +63,7 @@ export function isObject(val) {
 
 ::: code-group-item baseHandlers.ts
 
-```ts {3-4,20}
+```ts {3-4,22-24}
 // src/reactivity/baseHandlers.ts
 
 import { ReactiveFlags, reactive } from './reactive'

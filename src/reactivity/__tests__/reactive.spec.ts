@@ -1,11 +1,11 @@
 /*
  * @Author: ext.luhaifeng1 ext.luhaifeng1@jd.com
  * @Date: 2021-11-14 14:42:52
- * @LastEditors: ext.luhaifeng1
- * @LastEditTime: 2022-06-29 10:07:50
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-06-29 21:02:56
  * @Description: 
  */
-import { reactive, isReactive } from '../reactive'
+import { reactive, isReactive, isProxy } from '../reactive'
 
 describe('reactive', () => {
   it('happy path', () => {
@@ -19,6 +19,8 @@ describe('reactive', () => {
     // 判断是否是 reactive 对象
     expect(isReactive(origin)).toBe(false)
     expect(isReactive(reactiveData)).toBe(true)
+    // 判断是否是 Proxy 对象
+    expect(isProxy(reactiveData)).toBe(true)
   })
 
   it('nested reactive', () => {

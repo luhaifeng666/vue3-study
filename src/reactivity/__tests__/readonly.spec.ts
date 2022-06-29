@@ -1,12 +1,12 @@
 /*
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-06-25 16:53:52
- * @LastEditors: ext.luhaifeng1
- * @LastEditTime: 2022-06-29 10:22:53
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-06-29 21:03:30
  * @Description: 
  */
 
-import { readonly, isReadonly } from '../reactive'
+import { readonly, isReadonly, isProxy } from '../reactive'
 
 describe('readonly', () => {
   it('happy path', () => {
@@ -19,6 +19,8 @@ describe('readonly', () => {
     expect(isReadonly(original.bar)).toBe(false)
     expect(isReadonly(wrapped.bar)).toBe(true)
     expect(isReadonly(wrapped)).toBe(true)
+    // 判断是否是 Proxy 对象
+    expect(isProxy(wrapped)).toBe(true)
   })
 
   it('warn when call set', () => {
