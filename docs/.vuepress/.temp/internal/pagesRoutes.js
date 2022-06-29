@@ -9,5 +9,6 @@ export const pagesRoutes = [
   ["v-05db1f42","/miniVue/notes/reactivity/04_stop.html",{"title":"stop"},["/miniVue/notes/reactivity/04_stop","/miniVue/notes/reactivity/04_stop.md"]],
   ["v-37892dc3","/miniVue/notes/reactivity/05_readonly.html",{"title":"readonly"},["/miniVue/notes/reactivity/05_readonly","/miniVue/notes/reactivity/05_readonly.md"]],
   ["v-bc670b30","/miniVue/notes/reactivity/06_reactiveOrReadonly.html",{"title":"isReactive & isReadOnly"},["/miniVue/notes/reactivity/06_reactiveOrReadonly","/miniVue/notes/reactivity/06_reactiveOrReadonly.md"]],
+  ["v-464fa7c2","/miniVue/notes/reactivity/07_nestedReactiveAndReadonly.html",{"title":"reactive & readonly 对象嵌套功能"},["/miniVue/notes/reactivity/07_nestedReactiveAndReadonly","/miniVue/notes/reactivity/07_nestedReactiveAndReadonly.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
 ]
