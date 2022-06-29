@@ -23,6 +23,8 @@ export const pagesData = {
   "v-464fa7c2": () => import(/* webpackChunkName: "v-464fa7c2" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/miniVue/notes/reactivity/07_nestedReactiveAndReadonly.html.js").then(({ data }) => data),
   // path: /miniVue/notes/reactivity/08_shallowReadonly.html
   "v-ec2b32d8": () => import(/* webpackChunkName: "v-ec2b32d8" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/miniVue/notes/reactivity/08_shallowReadonly.html.js").then(({ data }) => data),
+  // path: /miniVue/notes/reactivity/09_isProxy.html
+  "v-453eef05": () => import(/* webpackChunkName: "v-453eef05" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/miniVue/notes/reactivity/09_isProxy.html.js").then(({ data }) => data),
   // path: /404.html
   "v-3706649a": () => import(/* webpackChunkName: "v-3706649a" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/404.html.js").then(({ data }) => data),
 }
