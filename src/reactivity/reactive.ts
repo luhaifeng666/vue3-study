@@ -1,11 +1,11 @@
 /*
  * @Author: ext.luhaifeng1 ext.luhaifeng1@jd.com
  * @Date: 2021-11-14 14:41:24
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-26 15:41:55
+ * @LastEditors: ext.luhaifeng1
+ * @LastEditTime: 2022-06-29 17:46:16
  * @Description: 
  */
-import { mutableHandlers, readonlyHandlers } from './baseHandlers'
+import { mutableHandlers, readonlyHandlers, shallowReadonlyHandlers } from './baseHandlers'
 
 export const enum ReactiveFlags {
   IS_REACTIVE = '__v_isReactive',
@@ -39,6 +39,15 @@ export const reactive = (raw) => {
  */
 export const readonly = (raw) => {
   return createActiveObject(raw, readonlyHandlers)
+}
+
+/**
+ * 创建 shallowReadonly 对象
+ * @param raw 
+ * @returns 
+ */
+export const shallowReadonly = raw => {
+  return createActiveObject(raw, shallowReadonlyHandlers)
 }
 
 // 判断是否是 reactive 对象

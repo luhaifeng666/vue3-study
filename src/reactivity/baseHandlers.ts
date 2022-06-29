@@ -1,20 +1,20 @@
 /*
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2021-11-14 15:06:13
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-29 11:19:32
+ * @LastEditors: ext.luhaifeng1
+ * @LastEditTime: 2022-06-29 17:41:43
  * @Description: 
  */
 import { track, trigger } from './effect'
 import { ReactiveFlags, reactive, readonly } from './reactive'
-import { isObject } from '../shared'
+import { isObject, extend } from '../shared'
 
 /**
  * 用于生成 get 方法
  * @param isReadonly 是否是 readonly 对象
  * @returns 
  */
-function createGetter(isReadonly = false) {
+function createGetter(isReadonly = false, isShallow = false) {
   return function(target, key) {
     // 判断是否是 reactive 对象
     if (key === ReactiveFlags.IS_REACTIVE) {
@@ -24,6 +24,9 @@ function createGetter(isReadonly = false) {
       return isReadonly
     }
     const res = Reflect.get(target, key)
+
+    // 如果是 shallow，直接返回结果
+    if (isShallow) return res
 
     if (isObject(res)) {
       return isReadonly ? readonly(res) : reactive(res)
@@ -48,6 +51,7 @@ function createSetter() {
 const get = createGetter()
 const set = createSetter()
 const readonlyGet = createGetter(true)
+const shallowReadonlyGet = createGetter(true, true)
 
 export const mutableHandlers = {
   get,
@@ -62,3 +66,7 @@ export const readonlyHandlers = {
     return true
   }
 }
+
+export const shallowReadonlyHandlers = extend({}, readonlyHandlers, {
+  get: shallowReadonlyGet
+})
