@@ -1,8 +1,8 @@
 /*
  * @Author: ext.luhaifeng1 ext.luhaifeng1@jd.com
  * @Date: 2021-11-14 14:42:52
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-26 14:50:54
+ * @LastEditors: ext.luhaifeng1
+ * @LastEditTime: 2022-06-29 10:07:50
  * @Description: 
  */
 import { reactive, isReactive } from '../reactive'
@@ -19,5 +19,18 @@ describe('reactive', () => {
     // 判断是否是 reactive 对象
     expect(isReactive(origin)).toBe(false)
     expect(isReactive(reactiveData)).toBe(true)
+  })
+
+  it('nested reactive', () => {
+    const original = {
+      nested: {
+        foo: 1
+      },
+      array: [{ bar: 2 }]
+    }
+    const observed = reactive(original)
+    expect(isReactive(observed.nested)).toBe(true)
+    expect(isReactive(observed.array)).toBe(true)
+    expect(isReactive(observed.array[0])).toBe(true)
   })
 })
