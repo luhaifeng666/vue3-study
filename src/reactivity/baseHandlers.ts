@@ -1,12 +1,13 @@
 /*
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2021-11-14 15:06:13
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-26 15:24:52
+ * @LastEditors: ext.luhaifeng1
+ * @LastEditTime: 2022-06-29 10:23:31
  * @Description: 
  */
 import { track, trigger } from './effect'
-import { ReactiveFlags } from './reactive'
+import { ReactiveFlags, reactive, readonly } from './reactive'
+import { isObject } from '../shared'
 
 /**
  * 用于生成 get 方法
@@ -23,6 +24,10 @@ function createGetter(isReadonly = false) {
       return isReadonly
     }
     const res = Reflect.get(target, key)
+
+    if (isObject(res)) {
+      return isReadonly ? readonly(res) : reactive(res)
+    }
     // 收集依赖
     !isReadonly && track(target, key)
     return res
