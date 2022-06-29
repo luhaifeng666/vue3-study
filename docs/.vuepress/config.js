@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-06-26 10:05:23
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-26 10:10:05
+ * @LastEditTime: 2022-06-29 17:57:34
  * @Description: 
  */
 
@@ -29,7 +29,7 @@ let getMenus = function() {
 }
 
 let config = {
-	title: 'vue3-study',
+	title: 'vue3 源码学习',
 	description: ' ',
 	base: '/vue3-study/',
 	head: [

@@ -1,8 +1,8 @@
 /*
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2021-11-14 15:06:13
- * @LastEditors: ext.luhaifeng1
- * @LastEditTime: 2022-06-29 17:41:43
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-06-29 20:46:48
  * @Description: 
  */
 import { track, trigger } from './effect'
@@ -12,6 +12,7 @@ import { isObject, extend } from '../shared'
 /**
  * 用于生成 get 方法
  * @param isReadonly 是否是 readonly 对象
+ * @param isShallow 是否是 shallow 对象
  * @returns 
  */
 function createGetter(isReadonly = false, isShallow = false) {
