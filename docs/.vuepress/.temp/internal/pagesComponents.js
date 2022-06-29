@@ -23,6 +23,8 @@ export const pagesComponents = {
   "v-bc670b30": defineAsyncComponent(() => import(/* webpackChunkName: "v-bc670b30" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/miniVue/notes/reactivity/06_reactiveOrReadonly.html.vue")),
   // path: /miniVue/notes/reactivity/07_nestedReactiveAndReadonly.html
   "v-464fa7c2": defineAsyncComponent(() => import(/* webpackChunkName: "v-464fa7c2" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/miniVue/notes/reactivity/07_nestedReactiveAndReadonly.html.vue")),
+  // path: /miniVue/notes/reactivity/08_shallowReadonly.html
+  "v-ec2b32d8": defineAsyncComponent(() => import(/* webpackChunkName: "v-ec2b32d8" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/miniVue/notes/reactivity/08_shallowReadonly.html.vue")),
   // path: /404.html
   "v-3706649a": defineAsyncComponent(() => import(/* webpackChunkName: "v-3706649a" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/404.html.vue")),
 }
