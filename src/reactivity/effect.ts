@@ -1,8 +1,8 @@
 /*
  * @Author: ext.luhaifeng1 ext.luhaifeng1@jd.com
  * @Date: 2021-11-14 18:34:45
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-28 14:56:01
+ * @LastEditors: ext.luhaifeng1
+ * @LastEditTime: 2022-06-30 15:39:17
  * @Description: 
  */
 
@@ -61,8 +61,16 @@ function cleanEffect(effect) {
 const targetMap = new Map() // 存放依赖映射关系
 
 // 判断是否在收集中
-function isTracking() {
+export function isTracking() {
   return shouldTrack && activeEffect !== undefined
+}
+
+export function trackEffects(deps: Set<any>) {
+  // 避免重复收集
+  if (deps.has(activeEffect)) return
+  // 将依赖对象保存到列
+  deps.add(activeEffect)
+  activeEffect.deps.push(deps)
 }
 
 /**
@@ -86,11 +94,18 @@ export function track(target, key) {
     deps = new Set()
     depsMap.set(key, deps)
   }
-  // 避免重复收集
-  if (deps.has(activeEffect)) return
-  // 将依赖对象保存到列
-  deps.add(activeEffect)
-  activeEffect.deps.push(deps)
+  trackEffects(deps)
+}
+
+export function triggerEffects(deps) {
+  for(const dep of deps) {
+    // 判断是否存在 scheduler 方法，存在的的话执行 scheduler，否则执行run
+    if(dep.scheduler) {
+      dep.scheduler()
+    } else {
+      dep.run()
+    }
+  }
 }
 
 /**
@@ -106,14 +121,7 @@ export function trigger(target, key) {
     return
   }
   const deps = depsMap.get(key)
-  for(const dep of deps) {
-    // 判断是否存在 scheduler 方法，存在的的话执行 scheduler，否则执行run
-    if(dep.scheduler) {
-      dep.scheduler()
-    } else {
-      dep.run()
-    }
-  }
+  triggerEffects(deps)
 }
 
 /**
