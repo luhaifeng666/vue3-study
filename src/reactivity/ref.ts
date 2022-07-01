@@ -2,7 +2,7 @@
  * @Author: ext.luhaifeng1 ext.luhaifeng1@jd.com
  * @Date: 2022-06-30 15:06:08
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-07-01 11:10:25
+ * @LastEditTime: 2022-07-01 12:35:01
  * @Description: 
  */
 
@@ -12,8 +12,9 @@ import { reactive } from './reactive'
 
 class RefImpl {
   private _value: any
-  deps: Set<any>
   private _rawValue: any // 保存原始值，用于 set 阶段对比值是否发生了变化
+  deps: Set<any>
+  __v_isRef = true
 
   constructor(value: any) {
     this._rawValue = value
@@ -48,4 +49,22 @@ function convert(value) {
 
 export function ref(value) {
   return new RefImpl(value)
+}
+
+/**
+ * 用于判断传入的值是否是 ref
+ * @param ref 
+ * @returns 
+ */
+export function isRef(ref) {
+  return !!ref.__v_isRef
+}
+
+/**
+ * 用于返回 ref 的value值
+ * 如果传入的不是 ref，则原样返回
+ * @param ref 
+ */
+export function unRef(ref) {
+  return isRef(ref) ? ref.value : ref
 }
