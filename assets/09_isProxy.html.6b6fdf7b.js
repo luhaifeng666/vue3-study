@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-453eef05","path":"/miniVue/notes/reactivity/09_isProxy.html","title":"isProxy","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1656650170000,"contributors":[{"name":"luhaifeng666","email":"youzui@hotmail.com","commits":1}]},"filePathRelative":"miniVue/notes/reactivity/09_isProxy.md"}');export{e as data};
