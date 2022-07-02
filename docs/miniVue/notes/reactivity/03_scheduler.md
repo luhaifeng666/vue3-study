@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-06-21 14:48:37
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-24 23:58:28
+ * @LastEditTime: 2022-07-01 17:27:51
  * @Description: 
 -->
 # scheduler
@@ -86,7 +86,7 @@ export function effect (fn, options: any = {}) {
 :::: code-group
 ::: code-group-item effect.ts
 
-``` ts {6,17}
+``` ts {7,19}
 // src/reactivity/effect.ts
 
 class ReactiveEffect {
