@@ -2,7 +2,7 @@
  * @Author: ext.luhaifeng1 ext.luhaifeng1@jd.com
  * @Date: 2022-06-30 15:06:08
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-07-01 12:35:01
+ * @LastEditTime: 2022-07-03 10:26:01
  * @Description: 
  */
 
@@ -67,4 +67,25 @@ export function isRef(ref) {
  */
 export function unRef(ref) {
   return isRef(ref) ? ref.value : ref
+}
+
+/**
+ * template 中调用此方法，目的是在页面中无需通过 .value 的方式获取 ref 的值
+ * @param objectWithRefs 
+ * @returns 
+ */
+export function proxyRefs(objectWithRefs) {
+  return new Proxy(objectWithRefs, {
+    get(target, key) {
+      return unRef(Reflect.get(target, key))
+    },
+
+    set(target, key, value) {
+      if (isRef(target[key]) && !isRef(value)) {
+        return target[key].value = value
+      } else {
+        return Reflect.set(target, key, value)
+      }
+    }
+  })
 }
