@@ -1,8 +1,8 @@
 /*
  * @Author: ext.luhaifeng1 ext.luhaifeng1@jd.com
  * @Date: 2021-11-14 18:34:45
- * @LastEditors: ext.luhaifeng1
- * @LastEditTime: 2022-06-30 15:39:17
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-07-05 14:54:48
  * @Description: 
  */
 
@@ -10,7 +10,7 @@ import { extend } from '../shared'
 
 let activeEffect
 let shouldTrack = false // 标记是否应该进行收集
-class ReactiveEffect {
+export class ReactiveEffect {
   private _fn: any
   public scheduler: Function | undefined
   active = true // 是否需要清空 deps
