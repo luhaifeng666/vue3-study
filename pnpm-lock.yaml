@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@babel/preset-env': ^7.18.2
   '@babel/preset-typescript': ^7.17.12
+  '@rollup/plugin-typescript': ^8.3.3
   '@types/jest': ^28.1.1
   '@vue/component-compiler-utils': ^3.3.0
   '@vuepress/client': ^2.0.0-beta.48
@@ -13,6 +14,7 @@ specifiers:
   husky: ^5.0.9
   jest: ^28.1.1
   lint-staged: ^10.5.4
+  rollup: ^2.77.0
   vue: ^3.2.37
   vuepress: ^2.0.0-beta.48
   vuepress-plugin-comment2: ^2.0.0-beta.82
@@ -20,6 +22,7 @@ specifiers:
 devDependencies:
   '@babel/preset-env': 7.18.2
   '@babel/preset-typescript': 7.17.12
+  '@rollup/plugin-typescript': 8.3.3_rollup@2.77.0
   '@types/jest': 28.1.1
   '@vue/component-compiler-utils': 3.3.0
   '@vuepress/client': 2.0.0-beta.48
@@ -30,6 +33,7 @@ devDependencies:
   husky: 5.2.0
   jest: 28.1.1
   lint-staged: 10.5.4
+  rollup: 2.77.0
   vue: 3.2.37
   vuepress: 2.0.0-beta.48_15479ec5275cd102c9cf1fdc59f5b537
   vuepress-plugin-comment2: 2.0.0-beta.82
@@ -1640,6 +1644,34 @@ packages:
       fastq: 1.13.0
     dev: true
 
+  /@rollup/plugin-typescript/8.3.3_rollup@2.77.0:
+    resolution: {integrity: sha512-55L9SyiYu3r/JtqdjhwcwaECXP7JeJ9h1Sg1VWRJKIutla2MdZQodTgcCNybXLMCnqpNLEhS2vGENww98L1npg==}
+    engines: {node: '>=8.0.0'}
+    peerDependencies:
+      rollup: ^2.14.0
+      tslib: '*'
+      typescript: '>=3.7.0'
+    peerDependenciesMeta:
+      tslib:
+        optional: true
+    dependencies:
+      '@rollup/pluginutils': 3.1.0_rollup@2.77.0
+      resolve: 1.22.0
+      rollup: 2.77.0
+    dev: true
+
+  /@rollup/pluginutils/3.1.0_rollup@2.77.0:
+    resolution: {integrity: sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==}
+    engines: {node: '>= 8.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0
+    dependencies:
+      '@types/estree': 0.0.39
+      estree-walker: 1.0.1
+      picomatch: 2.3.1
+      rollup: 2.77.0
+    dev: true
+
   /@sinclair/typebox/0.23.5:
     resolution: {integrity: sha512-AFBVi/iT4g20DHoujvMH1aEDn8fGJh4xsRGCP6d8RpLPMqsNPvW01Jcn0QysXTsg++/xj25NmJsGyH9xug/wKg==}
     dev: true
@@ -1709,6 +1741,10 @@ packages:
     resolution: {integrity: sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg==}
     dependencies:
       '@types/ms': 0.7.31
+    dev: true
+
+  /@types/estree/0.0.39:
+    resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
     dev: true
 
   /@types/fs-extra/9.0.13:
@@ -1919,7 +1955,7 @@ packages:
       autoprefixer: 10.4.7_postcss@8.4.14
       connect-history-api-fallback: 1.6.0
       postcss: 8.4.14
-      rollup: 2.75.6
+      rollup: 2.77.0
       vite: 2.9.12
       vue: 3.2.37
       vue-router: 4.0.16_vue@3.2.37
@@ -3193,6 +3229,10 @@ packages:
     resolution: {integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==}
     engines: {node: '>=4'}
     hasBin: true
+    dev: true
+
+  /estree-walker/1.0.1:
+    resolution: {integrity: sha512-1fMXF3YP4pZZVozF8j/ZLfvnR8NSIljt56UhbZ5PeeDmmGHpgpdwQt7ITlGvYaQukCvuBRMLEiKiYC+oeIg4cg==}
     dev: true
 
   /estree-walker/2.0.2:
@@ -5024,8 +5064,8 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup/2.75.6:
-    resolution: {integrity: sha512-OEf0TgpC9vU6WGROJIk1JA3LR5vk/yvqlzxqdrE2CzzXnqKXNzbAwlWUXis8RS3ZPe7LAq+YUxsRa0l3r27MLA==}
+  /rollup/2.77.0:
+    resolution: {integrity: sha512-vL8xjY4yOQEw79DvyXLijhnhh+R/O9zpF/LEgkCebZFtb6ELeN9H3/2T0r8+mp+fFTBHZ5qGpOpW2ela2zRt3g==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
@@ -5511,7 +5551,7 @@ packages:
       esbuild: 0.14.43
       postcss: 8.4.14
       resolve: 1.22.0
-      rollup: 2.75.6
+      rollup: 2.77.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
