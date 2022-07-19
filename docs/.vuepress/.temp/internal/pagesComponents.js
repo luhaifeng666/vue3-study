@@ -35,6 +35,8 @@ export const pagesComponents = {
   "v-6486207a": defineAsyncComponent(() => import(/* webpackChunkName: "v-6486207a" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/miniVue/notes/reactivity/12_proxyRefs.html.vue")),
   // path: /miniVue/notes/reactivity/13_computed.html
   "v-79913d35": defineAsyncComponent(() => import(/* webpackChunkName: "v-79913d35" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/miniVue/notes/reactivity/13_computed.html.vue")),
+  // path: /miniVue/notes/runtime-core/01_initComponent.html
+  "v-dae0fb94": defineAsyncComponent(() => import(/* webpackChunkName: "v-dae0fb94" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/miniVue/notes/runtime-core/01_initComponent.html.vue")),
   // path: /404.html
   "v-3706649a": defineAsyncComponent(() => import(/* webpackChunkName: "v-3706649a" */"/Users/luhaifeng/codes/mine/vue3-study/docs/.vuepress/.temp/pages/404.html.vue")),
 }
