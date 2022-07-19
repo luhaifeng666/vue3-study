@@ -16,5 +16,6 @@ export const pagesRoutes = [
   ["v-ff176422","/miniVue/notes/reactivity/11_isRef%20&%20unRef.html",{"title":"isRef & unRef"},["/miniVue/notes/reactivity/11_isRef & unRef.html","/miniVue/notes/reactivity/11_isRef%20&%20unRef","/miniVue/notes/reactivity/11_isRef & unRef.md","/miniVue/notes/reactivity/11_isRef%20&%20unRef.md"]],
   ["v-6486207a","/miniVue/notes/reactivity/12_proxyRefs.html",{"title":"proxyRefs"},["/miniVue/notes/reactivity/12_proxyRefs","/miniVue/notes/reactivity/12_proxyRefs.md"]],
   ["v-79913d35","/miniVue/notes/reactivity/13_computed.html",{"title":"computed"},["/miniVue/notes/reactivity/13_computed","/miniVue/notes/reactivity/13_computed.md"]],
+  ["v-dae0fb94","/miniVue/notes/runtime-core/01_initComponent.html",{"title":"初始化 Component"},["/miniVue/notes/runtime-core/01_initComponent","/miniVue/notes/runtime-core/01_initComponent.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
 ]
