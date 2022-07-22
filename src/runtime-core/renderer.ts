@@ -1,8 +1,8 @@
 /*
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-07-10 09:44:49
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-07-20 08:48:58
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-07-22 09:02:01
  * @Description: 
  */
 import { createComponentInstance, setupComponent } from "./component"
@@ -62,6 +62,6 @@ function mountComponent(vnode, container) {
 }
 
 function setupRenderEffect(instance, container) {
-  const subTree = instance.rener();
+  const subTree = instance.type.render();
   patch(subTree, container)
 }
