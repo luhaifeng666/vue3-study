@@ -2,9 +2,10 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-07-10 09:53:01
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-01 08:31:42
+ * @LastEditTime: 2022-08-01 09:04:00
  * @Description: 
  */
+import { PublicInstanceProxyHandlers } from './componentPublicInstance'
 export function createComponentInstance(vnode) {
   const component = {
     vnode,
@@ -25,14 +26,10 @@ export function setupComponent(instance) {
 function setupStatefulComponent(instance) {
   const Component = instance.type
 
-  instance.proxy = new Proxy({}, {
-    get(target, key) {
-      const { setupState } = instance
-      if (key in setupState) {
-        return setupState[key]
-      }
-    }
-  })
+  instance.proxy = new Proxy(
+    { _: instance },
+    PublicInstanceProxyHandlers
+  )
 
   const { setup } = Component
 
