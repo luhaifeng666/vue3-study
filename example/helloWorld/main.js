@@ -1,8 +1,8 @@
 /*
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-07-10 09:35:23
- * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-07-22 09:01:36
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-01 08:39:15
  * @Description: 
  */
 import { h } from '../../lib/mini-vue.esm.js'
@@ -11,7 +11,7 @@ export const App = {
     return h('div', {}, 'hello ' + this.msg)
   },
 
-  setUp() {
+  setup() {
     return {
       msg: 'world'
     }
