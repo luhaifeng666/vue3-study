@@ -1,8 +1,8 @@
 /*
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-07-10 09:44:49
- * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-07-22 09:02:01
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-01 08:57:37
  * @Description: 
  */
 import { createComponentInstance, setupComponent } from "./component"
@@ -28,7 +28,7 @@ function processElement(vnode: any, container: any) {
 
 function mountElement(vnode: any, container: any) {
   const { type, children, props } = vnode
-  const el = document.createElement(type)
+  const el = (vnode.el = document.createElement(type))
 
   if (typeof children === 'string') {
     el.textContent = children
@@ -58,10 +58,12 @@ function mountComponent(vnode, container) {
   const instance = createComponentInstance(vnode)
 
   setupComponent(instance)
-  setupRenderEffect(instance, container)
+  setupRenderEffect(instance, vnode, container)
 }
 
-function setupRenderEffect(instance, container) {
-  const subTree = instance.type.render();
+function setupRenderEffect(instance, vnode, container) {
+  const { proxy } = instance
+  const subTree = instance.type.render.call(proxy);
   patch(subTree, container)
+  vnode.el = subTree.el
 }
