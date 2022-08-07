@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-07-10 09:44:49
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-01 08:57:37
+ * @LastEditTime: 2022-08-07 10:27:52
  * @Description: 
  */
 import { createComponentInstance, setupComponent } from "./component"
@@ -16,7 +16,7 @@ function patch(vnode, container) {
   if (typeof type === 'string') {
     // 处理Element
     processElement(vnode, container)
-  } else {
+  } else if (isObject(type)) {
     // 处理组件
     processComponent(vnode, container)
   }
